@@ -15,6 +15,11 @@
     font-family: "Unbounded", sans-serif;
     color: var(--main-black);
     outline: none;
+    user-select: none;
+}
+
+img {
+    pointer-events: none;
 }
 
 body {

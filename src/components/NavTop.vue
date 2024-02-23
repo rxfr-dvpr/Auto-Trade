@@ -27,11 +27,11 @@
 
                 <div class="nav-socials">
                     <a href="https://t.me/redfox4ever" target="_blank" class="nav-socials-item">
-                        <img src="@/assets/icons/tg.svg" alt="" class="nav-socials-icon">
+                        <img src="@/assets/images/tg.svg" alt="" class="nav-socials-icon">
                     </a>
 
                     <a href="https://github.com/rxfr-dvpr" target="_blank" class="nav-socials-item">
-                        <img src="@/assets/icons/github.svg" alt="" class="nav-socials-icon">
+                        <img src="@/assets/images/github.svg" alt="" class="nav-socials-icon">
                     </a>
                 </div>
             </div>
