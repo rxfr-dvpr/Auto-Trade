@@ -2,7 +2,6 @@
   <nav class="nav">
     <div class="container">
       <div class="row">
-
         <router-link to="/" class="nav-logo">
           <img src="@/assets/images/nav-logo.svg" alt="" class="nav-logo-img">
         </router-link>
@@ -14,7 +13,6 @@
             </li>
           </ul>
         </div>
-
       </div>
     </div>
   </nav>
@@ -29,6 +27,18 @@ export default {
     return {
       store: navStore()
     }
+  },
+  mounted() {
+    const nav = document.querySelector('nav') 
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        nav.style.top = 0
+        nav.style.backdropFilter = 'blur(10px)'
+      } else {
+        nav.style.top = '50px'
+        nav.style.backdropFilter = 'blur(0px)'
+      }
+    })
   }
 }
 
@@ -41,6 +51,11 @@ export default {
   padding: 4px 0;
   border-top: solid 2px var(--main-white);
   border-bottom: solid 2px var(--main-white);
+  position: fixed;
+  top: 50px;
+  left: 0;
+  z-index: 2024;
+  transition: .2s;
 
   .row {
     justify-content: space-between;

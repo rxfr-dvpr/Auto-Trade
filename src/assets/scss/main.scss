@@ -23,7 +23,7 @@ img {
 }
 
 body {
-    background: var(--main-black);
+    background: var(--bg-color);
 }
 
 html {
@@ -56,3 +56,12 @@ button {
     display: flex;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main-blue);
+    border-radius: 10px;
+}

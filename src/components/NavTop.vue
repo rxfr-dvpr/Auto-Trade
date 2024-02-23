@@ -58,6 +58,10 @@ export default {
 
 .nav-top {
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2024;
 
     .row {
         justify-content: space-between;
