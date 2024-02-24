@@ -2,6 +2,8 @@
   <Header/>
 
   <main class="main">
+    <Categories/>
+    
     <HowToBuy/>
   </main>
 </template>
@@ -9,12 +11,14 @@
 <script>
 import Header from '@/components/Header.vue'
 import HowToBuy from '@/components/HowToBuy.vue'
+import Categories from '@/components/Categories.vue'
 
 export default {
   name: 'Home Page',
   components: {
     Header,
-    HowToBuy
+    HowToBuy,
+    Categories
   }
 }
 
