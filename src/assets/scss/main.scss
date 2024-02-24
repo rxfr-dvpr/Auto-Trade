@@ -65,3 +65,18 @@ button {
     background: var(--main-blue);
     border-radius: 10px;
 }
+
+.all-title {
+    font-size: calc(20px + 10 * (100vw / 1920));
+    font-weight: 500;
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}
+
+@media (min-width: 1920px) {
+    .all-title {
+        font-size: 30px !important;
+    }
+}
