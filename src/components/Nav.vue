@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <router-link to="/" class="nav-logo">
-          <img src="@/assets/images/nav-logo.svg" alt="" class="nav-logo-img">
+          <img :src="scrollValue > 20 ? store.navLogoDark : store.navLogo" alt="" class="nav-logo-img">
         </router-link>
 
         <div class="nav__collapse">
@@ -25,19 +25,15 @@ export default {
   name: 'Navigation',
   data() {
     return {
-      store: navStore()
+      store: navStore(),
+      scrollValue: window.scrollY
     }
   },
   mounted() {
     const nav = document.querySelector('nav') 
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        nav.style.top = 0
-        nav.style.backdropFilter = 'blur(10px)'
-      } else {
-        nav.style.top = '50px'
-        nav.style.backdropFilter = 'blur(0px)'
-      }
+      this.scrollValue = window.scrollY
+      window.scrollY > 20 ? nav.classList.add('scrolled') : nav.classList.remove('scrolled')
     })
   }
 }
@@ -56,6 +52,18 @@ export default {
   left: 0;
   z-index: 2024;
   transition: .2s;
+
+  &.scrolled {
+    backdrop-filter: blur(10px);
+    top: 0;
+    background: var(--bg-color);
+    border-color: var(--bg-color);
+    box-shadow: 0px 10px 15px rgba($color: #000000, $alpha: .2);
+
+    .nav__list-link {
+      color: var(--main-black);
+    }
+  }
 
   .row {
     justify-content: space-between;
@@ -91,7 +99,7 @@ export default {
       transition: .3s;
 
       &:hover {
-        color: var(--main-blue);
+        color: var(--main-blue) !important;
       }
     }
   }

@@ -8,7 +8,7 @@
     </div>
 
     <div class="header-bg-box">
-        <img src="@/assets/images/header/header-bg.png" alt="" class="header-bg">
+        <img :src="store.img" alt="" class="header-bg">
     </div>
   </header>
 </template>

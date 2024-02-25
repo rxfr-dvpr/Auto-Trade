@@ -27,11 +27,11 @@
 
                 <div class="nav-socials">
                     <a href="https://t.me/redfox4ever" target="_blank" class="nav-socials-item">
-                        <img src="@/assets/images/tg.svg" alt="" class="nav-socials-icon">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/NavTop%2Ftg.svg?alt=media&token=46ef8d9e-6fa5-44c9-bd29-40fbeb2d926a" alt="" class="nav-socials-icon">
                     </a>
 
                     <a href="https://github.com/rxfr-dvpr" target="_blank" class="nav-socials-item">
-                        <img src="@/assets/images/github.svg" alt="" class="nav-socials-icon">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/NavTop%2Fgithub.svg?alt=media&token=8b6f952a-a40c-42e7-9fe9-65992a26c63d" alt="" class="nav-socials-icon">
                     </a>
                 </div>
             </div>
