@@ -4,6 +4,8 @@
   <main class="main">
     <Categories/>
     
+    <Banner/>
+
     <HowToBuy/>
   </main>
 </template>
@@ -12,13 +14,15 @@
 import Header from '@/components/Header.vue'
 import HowToBuy from '@/components/HowToBuy.vue'
 import Categories from '@/components/Categories.vue'
+import Banner from '@/components/Banner.vue'
 
 export default {
   name: 'Home Page',
   components: {
     Header,
     HowToBuy,
-    Categories
+    Categories,
+    Banner
   }
 }
 
