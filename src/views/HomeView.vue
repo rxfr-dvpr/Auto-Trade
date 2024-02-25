@@ -3,6 +3,8 @@
 
   <main class="main">
     <Categories/>
+
+    <Choose/>
     
     <Banner/>
 
@@ -15,6 +17,7 @@ import Header from '@/components/Header.vue'
 import HowToBuy from '@/components/HowToBuy.vue'
 import Categories from '@/components/Categories.vue'
 import Banner from '@/components/Banner.vue'
+import Choose from '@/components/Choose.vue'
 
 export default {
   name: 'Home Page',
@@ -22,7 +25,8 @@ export default {
     Header,
     HowToBuy,
     Categories,
-    Banner
+    Banner,
+    Choose
   }
 }
 

@@ -69,10 +69,7 @@ button {
 .all-title {
     font-size: calc(20px + 10 * (100vw / 1920));
     font-weight: 500;
-
-    &::first-letter {
-        text-transform: uppercase;
-    }
+    text-transform: uppercase;
 }
 
 @media (min-width: 1920px) {
