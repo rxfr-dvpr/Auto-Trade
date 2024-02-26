@@ -9,6 +9,8 @@
     <Banner/>
 
     <HowToBuy/>
+
+    <About/>
   </main>
 </template>
 
@@ -18,6 +20,7 @@ import HowToBuy from '@/components/HowToBuy.vue'
 import Categories from '@/components/Categories.vue'
 import Banner from '@/components/Banner.vue'
 import Choose from '@/components/Choose.vue'
+import About from '@/components/About.vue'
 
 export default {
   name: 'Home Page',
@@ -26,7 +29,8 @@ export default {
     HowToBuy,
     Categories,
     Banner,
-    Choose
+    Choose,
+    About
   }
 }
 
