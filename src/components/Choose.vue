@@ -1,5 +1,5 @@
 <template>
-  <section class="choose__section">
+  <section class="choose__section" id="sale">
     <div class="container">
       <div class="row">
         <h2 class="choose-title all-title">{{ store.title }}</h2>

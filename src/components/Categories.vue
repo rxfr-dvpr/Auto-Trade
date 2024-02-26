@@ -1,5 +1,5 @@
 <template>
-  <section class="categories__section">
+  <section class="categories__section" id="parts">
     <div class="container">
         <div class="row">
             <div :class="`categories-item item-${idx + 1}`" v-for="(item, idx) in store.items" :key="idx">

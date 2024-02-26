@@ -11,7 +11,7 @@
 
                 <ul class="footer__list">
                     <li class="footer__list-item" v-for="(link, idx) in nStore.navList" :key="idx">
-                        <router-link :to="link.url" class="footer__list-link">{{ link.name }}</router-link>
+                        <a :href="link.url" class="footer__list-link">{{ link.name }}</a>
                     </li>
                 </ul>
             </div>
@@ -47,9 +47,9 @@ export default {
 .footer {
     width: 100%;
     padding: 50px 0;
-    border-top: 1px solid #D9D9D9;
-    border-bottom: 1px solid #D9D9D9;
-    margin: 70px 0;
+    border-top: 2px solid #D9D9D9;
+    border-bottom: 2px solid #D9D9D9;
+    margin-top: 70px;
 
     .row {
         justify-content: space-between;
@@ -104,6 +104,8 @@ export default {
         width: 100%;
         display: flex;
         flex-direction: column;
+        align-items: flex-end;
+        text-align: end;
         justify-content: space-between;
 
         .contact-link {
