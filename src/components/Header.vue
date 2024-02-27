@@ -10,6 +10,11 @@
     <div class="header-bg-box">
         <img :src="store.img" alt="" class="header-bg">
     </div>
+
+    <button class="header-btn" @click="this.$router.push('/category')">
+        {{ store.btn.txt }}
+        <img :src="store.btn.vector" alt="" class="header-btn-vector">
+    </button>
   </header>
 </template>
 
@@ -81,6 +86,29 @@ export default {
 
     &-subtitle {
         font-size: calc(25px + 10 * (100vw / 1920));
+    }
+
+    .header-btn {
+        max-width: 360px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: transparent;
+        border: 0;
+        padding: 15px 0 5px;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 800;
+
+        &-vector {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
     }
 }
 
