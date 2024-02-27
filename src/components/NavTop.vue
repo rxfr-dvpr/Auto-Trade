@@ -27,11 +27,11 @@
 
                 <div class="nav-socials">
                     <a href="https://t.me/redfox4ever" target="_blank" class="nav-socials-item">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/NavTop%2Ftg.svg?alt=media&token=46ef8d9e-6fa5-44c9-bd29-40fbeb2d926a" alt="" class="nav-socials-icon">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/NavTop%2Ftelegram.svg?alt=media&token=bcca0982-f853-4aad-b59e-bf796ebb3275" alt="" class="nav-socials-icon">
                     </a>
 
-                    <a href="https://github.com/rxfr-dvpr" target="_blank" class="nav-socials-item">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/NavTop%2Fgithub.svg?alt=media&token=8b6f952a-a40c-42e7-9fe9-65992a26c63d" alt="" class="nav-socials-icon">
+                    <a href="https://www.instagram.com/rxfr_dvpr" target="_blank" class="nav-socials-item">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/NavTop%2Finstagram.svg?alt=media&token=f0f37f58-8e99-463b-ab74-05cbcae233cf" alt="" class="nav-socials-icon">
                     </a>
                 </div>
             </div>
@@ -117,20 +117,18 @@ export default {
         .callback-btn {
             max-width: max-content;
             width: 100%;
-            background: var(--main-blue);
-            border: solid 2px transparent;
+            background: var(--main-black);
             color: var(--main-white);
             padding: 15px 35px;
             transition: .3s;
+            border: 0;
 
             &::first-letter {
                 text-transform: uppercase;
             }
 
             &:hover {
-                border-color: var(--main-blue);
-                background: transparent;
-                color: var(--main-blue);
+                background: var(--main-blue);
             }
         }
 

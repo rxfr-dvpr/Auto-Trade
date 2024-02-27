@@ -48,7 +48,7 @@ export default {
   border-top: solid 2px var(--main-white);
   border-bottom: solid 2px var(--main-white);
   position: fixed;
-  top: 50px;
+  top: 46px;
   left: 0;
   z-index: 2024;
   transition: .2s;
