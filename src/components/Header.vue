@@ -1,9 +1,9 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{'catalog-header': this.$route.name == 'catalog'}">
     <div class="container">
         <div class="row">
-            <h1 class="header-title">{{ store.title }}</h1>
-            <h2 class="header-subtitle">{{ store.subtitle }}</h2>
+            <h1 class="header-title">{{ this.$route.name == 'catalog' ? catalogTitle : store.title }}</h1>
+            <h2 class="header-subtitle">{{ this.$route.name == 'catalog' ? catalogSubtitle : store.subtitle }}</h2>
         </div>
     </div>
 
@@ -11,7 +11,7 @@
         <img :src="store.img" alt="" class="header-bg">
     </div>
 
-    <button class="header-btn" @click="this.$router.push('/category')">
+    <button class="header-btn" @click="this.$router.push('/catalog')">
         {{ store.btn.txt }}
         <img :src="store.btn.vector" alt="" class="header-btn-vector">
     </button>
@@ -25,7 +25,9 @@ export default {
     name: 'Header',
     data() {
         return {
-            store: headerStore()
+            store: headerStore(),
+            catalogTitle: 'explore exclusive cars',
+            catalogSubtitle: 'in our catalog'
         }
     }
 }
@@ -108,6 +110,15 @@ export default {
             top: 0;
             left: 0;
             z-index: -1;
+        }
+    }
+
+    &.catalog-header {
+        border-radius: 0 !important;
+        padding: 230px 0;
+
+        .header-btn {
+            display: none;
         }
     }
 }
