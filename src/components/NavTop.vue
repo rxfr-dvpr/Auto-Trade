@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-top">
+  <div class="nav-top" :class="{'second-mode': this.$route.name == 'catalog car'}">
     <div class="container">
         <div class="row">
             <div class="nav-top-left">
@@ -81,7 +81,7 @@ export default {
 
         option {
             color: var(--main-white);
-            background: var(--main-gray);
+            background: var(--main-black);
             cursor: pointer;
             padding: 5px 10px;
             font-weight: 500;
@@ -110,7 +110,7 @@ export default {
             transition: .3s;
 
             &:hover {
-                color: var(--main-blue);
+                color: var(--main-blue) !important;
             }
         }
 
@@ -145,6 +145,19 @@ export default {
             &-icon {
                 width: 100%;
             }
+        }
+    }
+
+    &.second-mode {
+        position: static;
+        background: var(--bg-color);
+
+        .all-select {
+            color: var(--main-black);
+        }
+
+        .nav-num {
+            color: var(--main-black);
         }
     }
 }

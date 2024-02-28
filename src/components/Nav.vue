@@ -1,9 +1,9 @@
 <template>
-  <nav class="nav">
+  <nav class="nav" :class="{'catalog-nav': this.$route.name == 'catalog car'}">
     <div class="container">
       <div class="row">
         <router-link to="/" class="nav-logo">
-          <img :src="scrollValue > 20 ? store.navLogoDark : store.navLogo" alt="" class="nav-logo-img">
+          <img :src="scrollValue > 20 || this.$route.name == 'catalog car' ? store.navLogoDark : store.navLogo" alt="" class="nav-logo-img">
         </router-link>
 
         <div class="nav__collapse">
@@ -30,7 +30,8 @@ export default {
     }
   },
   mounted() {
-    const nav = document.querySelector('nav') 
+    const nav = document.querySelector('nav')
+
     window.addEventListener('scroll', () => {
       this.scrollValue = window.scrollY
       window.scrollY > 20 ? nav.classList.add('scrolled') : nav.classList.remove('scrolled')
@@ -53,11 +54,20 @@ export default {
   z-index: 2024;
   transition: .2s;
 
-  &.scrolled {
-    backdrop-filter: blur(10px);
-    top: 0;
+  &.catalog-nav {
     background: var(--bg-color);
-    border-color: var(--bg-color);
+    border-color: #D9D9D9;
+    position: sticky !important;
+
+    .nav__list-link {
+      color: var(--main-black);
+    }
+  }
+
+  &.scrolled {
+    top: 0 !important;
+    background: var(--bg-color);
+    border-color: var(--bg-color) !important;
     box-shadow: 0px 10px 15px rgba($color: #000000, $alpha: .2);
 
     .nav__list-link {
