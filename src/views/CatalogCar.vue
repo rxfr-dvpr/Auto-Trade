@@ -3,9 +3,8 @@
 </template>
 
 <script>
-
 export default {
-    name: 'Catalog Car'
+  name: 'Catalog Car'
 }
 
 </script>

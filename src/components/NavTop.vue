@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-top" :class="{'second-mode': this.$route.name == 'catalog car'}">
+  <div class="nav-top" :class="{'second-mode': this.$route.name !== 'home'}">
     <div class="container">
         <div class="row">
             <div class="nav-top-left">

@@ -1,9 +1,9 @@
 <template>
-  <nav class="nav" :class="{'catalog-nav': this.$route.name == 'catalog car'}">
+  <nav class="nav" :class="{'catalog-nav': this.$route.name !== 'home'}">
     <div class="container">
       <div class="row">
         <router-link to="/" class="nav-logo">
-          <img :src="scrollValue > 20 || this.$route.name == 'catalog car' ? store.navLogoDark : store.navLogo" alt="" class="nav-logo-img">
+          <img :src="scrollValue > 20 || this.$route.name !== 'home' ? store.navLogoDark : store.navLogo" alt="" class="nav-logo-img">
         </router-link>
 
         <div class="nav__collapse">

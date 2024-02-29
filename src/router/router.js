@@ -18,6 +18,11 @@ const router = createRouter({
       path: '/catalog/:id',
       name: 'catalog car',
       component: () => import('@/views/CatalogCar.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not found',
+      component: () => import('@/views/NotFound.vue')
     }
   ]
 })
