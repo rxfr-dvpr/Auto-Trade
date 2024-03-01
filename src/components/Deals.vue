@@ -98,6 +98,7 @@ export default {
         cursor: pointer;
         background: var(--bg-color);
         transition: .3s;
+        overflow: hidden;
 
         &-top {
             width: 100%;
@@ -158,19 +159,20 @@ export default {
             position: relative;
             display: flex;
             justify-content: center;
-            padding-top: 15px;
-            font-size: 30px;
+            padding-top: 10px;
+            transition: .3s;
+            min-height: 175px;
 
             .car-bg-name {
-                font-size: 1em;
+                font-size: 30px;
                 color: var(--main-white);
                 text-transform: uppercase;
-                font-weight: 500;
+                font-weight: 700;
                 letter-spacing: 5px;
                 position: absolute;
-                top: 0;
+                top: 20%;
                 left: 50%;
-                transform: translateX(-50%);
+                transform: translate(-50%, -50%);
                 transition: .4s;
             }
 
@@ -213,13 +215,24 @@ export default {
             font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
+            transition: .3s;
         }
 
-        &:hover {
+        &:hover, &:active {
             background: var(--main-white);
 
+            .car-img-box {
+                padding-top: 30px;
+            }
+
             .car-bg-name {
-                color: var(--bg-color);
+                color: var(--main-black);
+                top: 15%;
+            }
+
+            .car-card-btn {
+                color: var(--main-white);
+                background: var(--main-black);
             }
         }
     }
