@@ -5,6 +5,8 @@
     <Categories/>
 
     <Choose/>
+
+    <Deals/>
     
     <Banner/>
 
@@ -21,11 +23,13 @@ import Categories from '@/components/Categories.vue'
 import Banner from '@/components/Banner.vue'
 import Choose from '@/components/Choose.vue'
 import About from '@/components/About.vue'
+import Deals from '@/components/Deals.vue'
 
 export default {
   name: 'Home Page',
   components: {
     Header,
+    Deals,
     HowToBuy,
     Categories,
     Banner,
