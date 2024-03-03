@@ -2,39 +2,43 @@
   <section class="deals__section">
     <div class="container">
         <div class="row">
-            <div class="car-card" v-for="(car, idx) in store.cars" :key="idx">
-                <div class="car-card-top">
-                    <p class="car-model">
-                        {{ car.model }}
-                        <span class="car-model-year">{{ car.year }}</span>
-                    </p>
+            <h2 class="deals-title all-title">{{ title }}</h2>
 
-                    <span :class="`car-status ${car.new ? 'new-car': 'used-car'}`">
-                        {{ car.new ? 'new' : 'used' }}
-                    </span>
+            <div class="car__cards">
+                <div class="car-card" v-for="(car, idx) in store.cars" :key="idx">
+                    <div class="car-card-top">
+                        <p class="car-model">
+                            {{ car.model }}
+                            <span class="car-model-year">{{ car.year }}</span>
+                        </p>
+
+                        <span :class="`car-status ${car.new ? 'new-car': 'used-car'}`">
+                            {{ car.new ? 'new' : 'used' }}
+                        </span>
+                    </div>
+
+                    <div class="car-img-box">
+                        <span class="car-bg-name">{{ car.bgTxt }}</span>
+                        <img :src="car.img" alt="" class="car-img">
+                    </div>
+
+                    <div class="car-descr">
+                        <span class="car-engine descr-txt">
+                            <img :src="engineIcon" alt="" class="car-descr-icon">
+                            {{ car.engine }} L
+                        </span>
+                        <span class="car-drivetrain descr-txt">
+                            <img :src="drivetrainIcon" alt="" class="car-descr-icon">
+                            {{ car.drivetrain }}
+                        </span>
+                        <span class="car-body descr-txt">
+                            <img :src="bodyIcon" alt="" class="car-descr-icon">
+                            {{ car.body }}
+                        </span>
+                    </div>
+
+                    <button class="car-card-btn">{{ splitPrice(car.price) }} {{ car.currency }}</button>
                 </div>
-
-                <div class="car-img-box">
-                    <span class="car-bg-name">{{ car.bgTxt }}</span>
-                    <img :src="car.img" alt="" class="car-img">
-                </div>
-
-                <div class="car-descr">
-                    <span class="car-engine descr-txt">
-                        <img :src="engineIcon" alt="" class="car-descr-icon">
-                        {{ car.engine }} L
-                    </span>
-                    <span class="car-drivetrain descr-txt">
-                        <img :src="drivetrainIcon" alt="" class="car-descr-icon">
-                        {{ car.drivetrain }}
-                    </span>
-                    <span class="car-body descr-txt">
-                        <img :src="bodyIcon" alt="" class="car-descr-icon">
-                        {{ car.body }}
-                    </span>
-                </div>
-
-                <button class="car-card-btn">{{ splitPrice(car.price) }} {{ car.currency }}</button>
             </div>
         </div>
     </div>
@@ -51,7 +55,8 @@ export default {
             store: carsStore(),
             engineIcon: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Cars%2Ficons%2Fengine.svg?alt=media&token=cd93f535-407f-4b56-8321-3021b2d70cfb',
             drivetrainIcon: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Cars%2Ficons%2Fdrivetrain.svg?alt=media&token=e0d1df14-1a44-4605-ba87-d462ac54ce4a',
-            bodyIcon: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Cars%2Ficons%2Fbody.svg?alt=media&token=16a8c95c-1122-4cce-8342-4045b992a275'
+            bodyIcon: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Cars%2Ficons%2Fbody.svg?alt=media&token=16a8c95c-1122-4cce-8342-4045b992a275',
+            title: 'hot deals'
         }
     },
     methods: {
@@ -80,6 +85,13 @@ export default {
     width: 100%;
 
     .row {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 35px;
+    }
+
+    .car__cards {
+        width: 100%;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         column-gap: 12px;
