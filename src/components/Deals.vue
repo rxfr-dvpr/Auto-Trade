@@ -5,7 +5,7 @@
             <h2 class="deals-title all-title">{{ title }}</h2>
 
             <div class="car__cards">
-                <div class="car-card" v-for="(car, idx) in store.cars" :key="idx">
+                <div class="car-card" v-for="(car, idx) in store.cars" :key="idx" @click="pushToPage(car)">
                     <div class="car-card-top">
                         <p class="car-model">
                             {{ car.model }}
@@ -37,7 +37,7 @@
                         </span>
                     </div>
 
-                    <button class="car-card-btn">{{ splitPrice(car.price) }} {{ car.currency }}</button>
+                    <button class="car-card-btn" @click="pushToPage(car)">{{ splitPrice(car.price) }} {{ car.currency }}</button>
                 </div>
             </div>
         </div>
@@ -47,6 +47,7 @@
 
 <script>
 import { carsStore } from "@/stores/carsStore.js";
+import { carPageStore } from "@/stores/carPageStore.js";
 
 export default {
     name: 'Deals Section',
@@ -56,7 +57,8 @@ export default {
             engineIcon: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Cars%2Ficons%2Fengine.svg?alt=media&token=cd93f535-407f-4b56-8321-3021b2d70cfb',
             drivetrainIcon: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Cars%2Ficons%2Fdrivetrain.svg?alt=media&token=e0d1df14-1a44-4605-ba87-d462ac54ce4a',
             bodyIcon: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Cars%2Ficons%2Fbody.svg?alt=media&token=16a8c95c-1122-4cce-8342-4045b992a275',
-            title: 'hot deals'
+            title: 'hot deals',
+            carPageStore: carPageStore()
         }
     },
     methods: {
@@ -73,8 +75,12 @@ export default {
             }
 
             return price.join('');
+        },
+        pushToPage(data) {
+            this.carPageStore.car = {...data}
+            this.$router.push(`/catalog/${data.link}`)
         }
-    }
+    },
 }
 
 </script>
