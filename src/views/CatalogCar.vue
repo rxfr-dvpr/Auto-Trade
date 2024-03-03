@@ -9,29 +9,40 @@
 
         <h3 class="car-model">{{ store.car.model }}</h3>
 
-        <div class="car__info">
-          <p class="car__info-name">{{ store.car.model }}</p>
+        <div class="car-grid">
 
-          <p class="car__info-drive all-info">Drive: <span>{{ store.car.drivetrain }}</span></p>
+          <swiper class="car-swiper" :modules="modules" :grabCursor="true" :spaceBetween="10" :navigation="true">
+            <swiper-slide class="car-swiper-slide" v-for="img in store.car.sliderImgs" :key="img">
+              <img :src="img" alt="" class="car-swiper-img">
+            </swiper-slide>
+          </swiper>
 
-          <p class="car__info-engine all-info">Engine displacement: <span>{{ store.car.engine }}00 cm3</span></p>
+          <div class="car__info">
+            <p class="car__info-name">{{ store.car.model }}</p>
 
-          <p class="car__info-engine-type all-info">Engine type: <span>{{ store.car.engineType }}</span></p>
+            <p class="car__info-drive all-info">Drive: <span>{{ store.car.drivetrain }}</span></p>
 
-          <p class="car__info-consuption all-info">Fuel consumption per 100 km: <span>{{ store.car.consuption }} L</span></p>
+            <p class="car__info-engine all-info">Engine displacement: <span>{{ store.car.engine }}00 cm3</span></p>
 
-          <p class="car__info-acceleration all-info">Acceleration to 100 km/h: <span>{{ store.car.acceleration }} sec</span></p>
+            <p class="car__info-engine-type all-info">Engine type: <span>{{ store.car.engineType }}</span></p>
 
-          <p class="car__info-power all-info">Engine power: <span>{{ store.car.power }} hp</span></p>
+            <p class="car__info-consuption all-info">Fuel consumption per 100 km: <span>{{ store.car.consuption }} L</span></p>
 
-          <p class="car__info-gears all-info">Number of gears: <span>{{ store.car.gears }}</span></p>
+            <p class="car__info-acceleration all-info">Acceleration to 100 km/h: <span>{{ store.car.acceleration }} sec</span></p>
 
-          <p class="car__info-trunk all-info">Trunk capacity max: <span>{{ store.car.trunk }} L</span></p>
+            <p class="car__info-power all-info">Engine power: <span>{{ store.car.power }} hp</span></p>
 
-          <p class="car__info-gearbox all-info">Type of gearbox: <span>{{ store.car.gearbox }}</span></p>
+            <p class="car__info-gears all-info">Number of gears: <span>{{ store.car.gears }}</span></p>
 
-          <p class="car__info-body all-info">Body type: <span>{{ store.car.body }}</span></p>
+            <p class="car__info-trunk all-info">Trunk capacity max: <span>{{ store.car.trunk }} L</span></p>
+
+            <p class="car__info-gearbox all-info">Type of gearbox: <span>{{ store.car.gearbox }}</span></p>
+
+            <p class="car__info-body all-info">Body type: <span>{{ store.car.body }}</span></p>
+          </div>
+
         </div>
+
       </div>
     </div>
   </section>
@@ -46,15 +57,22 @@
 <script>
 import Deals from '@/components/Deals.vue'
 import { carPageStore } from "@/stores/carPageStore.js";
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import {A11y, Navigation } from 'swiper/modules';
 
 export default {
   name: 'Catalog Car',
   components: {
-    Deals
+    Deals,
+    Swiper,
+    SwiperSlide
   },
   data() {
     return {
-      store: carPageStore()
+      store: carPageStore(),
+      modules: [Navigation, A11y],
     }
   }
 }
@@ -76,6 +94,34 @@ export default {
     font-size: 32px;
     font-weight: 400;
     text-transform: capitalize;
+  }
+
+  .car-grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .car-swiper {
+    max-width: 780px;
+    width: 100%;
+    height: 100%;
+
+    &-slide {
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    &-img {
+      width: 100%;
+      max-height: 500px;
+      min-height: 500px;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .car__info {
