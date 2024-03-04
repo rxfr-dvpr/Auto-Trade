@@ -1,12 +1,12 @@
 <template>
-  <section class="categories__section" id="parts">
+  <section class="categories__section" :class="`${numberOfItem < 3 ? 'flex-box': ''}`" id="parts">
     <div class="container">
         <div class="row">
-            <div :class="`categories-item item-${idx + 1}`" v-for="(item, idx) in store.items" :key="idx">
+            <div :class="`categories-item item-${idx + 1}`" v-for="(item, idx) in categoryArray()" :key="idx">
                 <img :src="item.img" alt="" class="item-img">
 
                 <p class="item-name">{{ item.name }}</p>
-                <a :href="item.url" class="item-link">more</a>
+                <router-link to="/catalog" class="item-link">more</router-link>
             </div>
         </div>
     </div>
@@ -21,6 +21,19 @@ export default {
     data() {
         return {
             store: categoriesStore()
+        }
+    },
+    props: {
+        numberOfItem: {
+            type: Number,
+            default: 3
+        }
+    },
+    methods: {
+        categoryArray: function() {
+            let data = [...this.store.items]
+            this.numberOfItem < 3 ? data.shift() : ''
+            return data
         }
     }
 }
@@ -89,6 +102,19 @@ export default {
         &.item-1 { grid-area: 1 / 1 / 5 / 3; }
         &.item-2 { grid-area: 1 / 3 / 3 / 5; }
         &.item-3 { grid-area: 3 / 3 / 5 / 5; }
+    }
+
+    &.flex-box {
+        .row {
+            grid-template-columns: repeat(2, 1fr) !important;
+            grid-template-rows: auto !important;
+        }
+
+        .categories-item {
+            &.item-1 { grid-area: unset; }
+            &.item-2 { grid-area: unset; }
+            &.item-3 { grid-area: unset; }
+        }
     }
 }
 

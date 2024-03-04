@@ -2,7 +2,7 @@
   <Header/>
 
   <main class="main">
-    <Categories/>
+    <Categories :numberOfItem="3"/>
 
     <Choose/>
 

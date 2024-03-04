@@ -51,6 +51,8 @@
 
   <main class="main">
     <Deals/>
+
+    <Categories :numberOfItem="2"/>
   </main>
 </template>
 
@@ -61,13 +63,15 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import {A11y, Navigation } from 'swiper/modules';
+import Categories from '@/components/Categories.vue';
 
 export default {
   name: 'Catalog Car',
   components: {
     Deals,
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    Categories
   },
   data() {
     return {
