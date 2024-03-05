@@ -28,7 +28,8 @@ export const carsStore = defineStore('Cars Store', {
                 gears: 6,
                 trunk: 701,
                 gearbox: 'automatic',
-                seater: 7
+                seater: 7,
+                descr: 'Alloy wheels, tinting, sunroof, spoiler, railings, xenon, bixenon, crystal optics, lensed optics, daytime running lights, fog lights, headlight washer, headlight corrector, leather, combined, curtains, audio system, built-in phone, bluetooth, CD, CD-changer, MP3, USB, DVD, DVD-changer, subwoofer, GUR, ABS, SRS, winter mode, sport mode, keyless access, full electric package, central locking, air conditioner, climate control, cruise control, trip computer, navigation system, multicooker, seat heating, heated rear seats, seat ventilation, seat memory, steering wheel memory, parktronic, rearview camera, light sensor, rain sensor, tire pressure sensor, air suspension, variable ground clearance, fresh imported, freshly delivered'
             },
             {
                 model: 'Mitsubishi Pajero Sport GLX',
@@ -55,7 +56,8 @@ export const carsStore = defineStore('Cars Store', {
                 gears: 8,
                 trunk: 131,
                 gearbox: 'automatic',
-                seater: 7
+                seater: 7,
+                descr: 'Alloy wheels, tinting, sunroof, spoiler, railings, xenon, bixenon, crystal optics, lensed optics, daytime running lights, fog lights, headlight washer, headlight corrector, leather, combined, curtains, audio system, built-in phone, bluetooth, CD, CD-changer, MP3, USB, DVD, DVD-changer, subwoofer, GUR, ABS, SRS, winter mode, sport mode, keyless access, full electric package, central locking, air conditioner, climate control, cruise control, trip computer, navigation system, multicooker, seat heating, heated rear seats, seat ventilation, seat memory, steering wheel memory, parktronic, rearview camera, light sensor, rain sensor, tire pressure sensor, air suspension, variable ground clearance, fresh imported, freshly delivered'
             },
             {
                 model: 'Kia K8 GDI LX',
@@ -82,7 +84,8 @@ export const carsStore = defineStore('Cars Store', {
                 gears: 8,
                 trunk: 510,
                 gearbox: 'automatic',
-                seater: 5
+                seater: 5,
+                descr: 'Alloy wheels, tinting, sunroof, spoiler, railings, xenon, bixenon, crystal optics, lensed optics, daytime running lights, fog lights, headlight washer, headlight corrector, leather, combined, curtains, audio system, built-in phone, bluetooth, CD, CD-changer, MP3, USB, DVD, DVD-changer, subwoofer, GUR, ABS, SRS, winter mode, sport mode, keyless access, full electric package, central locking, air conditioner, climate control, cruise control, trip computer, navigation system, multicooker, seat heating, heated rear seats, seat ventilation, seat memory, steering wheel memory, parktronic, rearview camera, light sensor, rain sensor, tire pressure sensor, air suspension, variable ground clearance, fresh imported, freshly delivered'
             },
             {
                 model: 'Lexus UX200 Luxury',
@@ -109,7 +112,8 @@ export const carsStore = defineStore('Cars Store', {
                 gears: 8,
                 trunk: 484,
                 gearbox: 'vsd',
-                seater: 5
+                seater: 5,
+                descr: 'Alloy wheels, tinting, sunroof, spoiler, railings, xenon, bixenon, crystal optics, lensed optics, daytime running lights, fog lights, headlight washer, headlight corrector, leather, combined, curtains, audio system, built-in phone, bluetooth, CD, CD-changer, MP3, USB, DVD, DVD-changer, subwoofer, GUR, ABS, SRS, winter mode, sport mode, keyless access, full electric package, central locking, air conditioner, climate control, cruise control, trip computer, navigation system, multicooker, seat heating, heated rear seats, seat ventilation, seat memory, steering wheel memory, parktronic, rearview camera, light sensor, rain sensor, tire pressure sensor, air suspension, variable ground clearance, fresh imported, freshly delivered'
             },
             {
                 model: 'Mercedes-Benz G-Class',
@@ -136,7 +140,8 @@ export const carsStore = defineStore('Cars Store', {
                 gears: 8,
                 trunk: 667,
                 gearbox: 'automatic',
-                seater: 5
+                seater: 5,
+                descr: 'Alloy wheels, tinting, sunroof, spoiler, railings, xenon, bixenon, crystal optics, lensed optics, daytime running lights, fog lights, headlight washer, headlight corrector, leather, combined, curtains, audio system, built-in phone, bluetooth, CD, CD-changer, MP3, USB, DVD, DVD-changer, subwoofer, GUR, ABS, SRS, winter mode, sport mode, keyless access, full electric package, central locking, air conditioner, climate control, cruise control, trip computer, navigation system, multicooker, seat heating, heated rear seats, seat ventilation, seat memory, steering wheel memory, parktronic, rearview camera, light sensor, rain sensor, tire pressure sensor, air suspension, variable ground clearance, fresh imported, freshly delivered'
             },
             {
                 model: 'Kia Carnival GDI L',
@@ -163,7 +168,8 @@ export const carsStore = defineStore('Cars Store', {
                 gears: 8,
                 trunk: 627,
                 gearbox: 'automatic',
-                seater: 7
+                seater: 7,
+                descr: 'Alloy wheels, tinting, sunroof, spoiler, railings, xenon, bixenon, crystal optics, lensed optics, daytime running lights, fog lights, headlight washer, headlight corrector, leather, combined, curtains, audio system, built-in phone, bluetooth, CD, CD-changer, MP3, USB, DVD, DVD-changer, subwoofer, GUR, ABS, SRS, winter mode, sport mode, keyless access, full electric package, central locking, air conditioner, climate control, cruise control, trip computer, navigation system, multicooker, seat heating, heated rear seats, seat ventilation, seat memory, steering wheel memory, parktronic, rearview camera, light sensor, rain sensor, tire pressure sensor, air suspension, variable ground clearance, fresh imported, freshly delivered'
             },
             {
                 model: 'Toyota Crown Platinum (Hybrid)',
@@ -190,7 +196,8 @@ export const carsStore = defineStore('Cars Store', {
                 gears: 6,
                 trunk: 627,
                 gearbox: 'automatic',
-                seater: 5
+                seater: 5,
+                descr: 'Alloy wheels, tinting, sunroof, spoiler, railings, xenon, bixenon, crystal optics, lensed optics, daytime running lights, fog lights, headlight washer, headlight corrector, leather, combined, curtains, audio system, built-in phone, bluetooth, CD, CD-changer, MP3, USB, DVD, DVD-changer, subwoofer, GUR, ABS, SRS, winter mode, sport mode, keyless access, full electric package, central locking, air conditioner, climate control, cruise control, trip computer, navigation system, multicooker, seat heating, heated rear seats, seat ventilation, seat memory, steering wheel memory, parktronic, rearview camera, light sensor, rain sensor, tire pressure sensor, air suspension, variable ground clearance, fresh imported, freshly delivered'
             },
             {
                 model: 'Lexus LC 500 Convertible V8 Titanium',
@@ -217,7 +224,8 @@ export const carsStore = defineStore('Cars Store', {
                 gears: 8,
                 trunk: 197,
                 gearbox: 'automatic',
-                seater: 4
+                seater: 4,
+                descr: 'Alloy wheels, tinting, sunroof, spoiler, railings, xenon, bixenon, crystal optics, lensed optics, daytime running lights, fog lights, headlight washer, headlight corrector, leather, combined, curtains, audio system, built-in phone, bluetooth, CD, CD-changer, MP3, USB, DVD, DVD-changer, subwoofer, GUR, ABS, SRS, winter mode, sport mode, keyless access, full electric package, central locking, air conditioner, climate control, cruise control, trip computer, navigation system, multicooker, seat heating, heated rear seats, seat ventilation, seat memory, steering wheel memory, parktronic, rearview camera, light sensor, rain sensor, tire pressure sensor, air suspension, variable ground clearance, fresh imported, freshly delivered'
             }
         ]
     })

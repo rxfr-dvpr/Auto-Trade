@@ -41,6 +41,13 @@
             <p class="car__info-body all-info">Body type: <span>{{ store.car.body }}</span></p>
           </div>
 
+          <div class="car__descr">
+            <div class="car__descr-info">
+              <h3 class="car__descr-title">description</h3>
+
+              <p class="car__descr-txt">{{ store.car.descr }}</p>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -165,6 +172,37 @@ export default {
         font-weight: 500;
         text-transform: capitalize;
       }
+    }
+  }
+
+  .car__descr {
+    max-width: 780px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    background: var(--main-white);
+    border-radius: 30px;
+
+    &-info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      row-gap: 15px;
+    }
+
+    &-title {
+      font-size: 24px;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    &-txt {
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: 1.2px;
+      line-height: 150%;
     }
   }
 }
