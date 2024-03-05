@@ -78,3 +78,23 @@ button {
         font-size: 30px !important;
     }
 }
+
+.swiper-button-prev, .swiper-button-next {
+    color: var(--main-black) !important;
+    background: var(--main-white);
+    border-radius: 10px;
+    overflow: hidden;
+    font-weight: 700;
+    width: 30px !important; 
+    height: 35px !important;
+    transition: .3s;
+
+    &::after {
+        font-size: 15px !important;
+    }
+
+    &:hover {
+        color: var(--main-white) !important;
+        background: var(--main-blue);
+    }
+}
