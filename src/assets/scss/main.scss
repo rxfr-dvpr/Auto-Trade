@@ -98,3 +98,20 @@ button {
         background: var(--main-blue);
     }
 }
+
+.all-btn {
+    width: 100%;
+    background: transparent;
+    border-radius: 8px;
+    border: solid 2px var(--main-black);
+    padding: 14.5px 0;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: .3s;
+
+    &:hover, &:active {
+        color: var(--main-white);
+        background: var(--main-black);
+    }
+}

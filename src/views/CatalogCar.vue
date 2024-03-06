@@ -4,18 +4,29 @@
       <div class="row">
 
         <div class="car-links">
-          <span class="car-links-item"></span>
+          <router-link to="/home" class="car-links-item">home</router-link>
+          <span class="link-dot"></span>
+          <router-link to="/catalog" class="car-links-item">catalog</router-link>
         </div>
 
         <h3 class="car-model">{{ store.car.model }}</h3>
 
-        <div class="car-grid">
+        <div class="car-flex-box">
+          <div class="car-flex-column">
+            <swiper class="car-swiper" :modules="modules" :grabCursor="true" :spaceBetween="10" :navigation="true">
+              <swiper-slide class="car-swiper-slide" v-for="img in store.car.sliderImgs" :key="img">
+                <img :src="img" alt="" class="car-swiper-img">
+              </swiper-slide>
+            </swiper>
 
-          <swiper class="car-swiper" :modules="modules" :grabCursor="true" :spaceBetween="10" :navigation="true">
-            <swiper-slide class="car-swiper-slide" v-for="img in store.car.sliderImgs" :key="img">
-              <img :src="img" alt="" class="car-swiper-img">
-            </swiper-slide>
-          </swiper>
+            <div class="car__descr">
+              <div class="car__descr-info">
+                <h3 class="car__descr-title">description</h3>
+
+                <p class="car__descr-txt">{{ store.car.descr }}</p>
+              </div>
+            </div>
+          </div>
 
           <div class="car__info">
             <p class="car__info-name">{{ store.car.model }}</p>
@@ -39,22 +50,24 @@
             <p class="car__info-gearbox all-info">Type of gearbox: <span>{{ store.car.gearbox }}</span></p>
 
             <p class="car__info-body all-info">Body type: <span>{{ store.car.body }}</span></p>
+
+            <button class="order-btn all-btn">order</button>
           </div>
 
-          <div class="car__descr">
-            <div class="car__descr-info">
-              <h3 class="car__descr-title">description</h3>
-
-              <p class="car__descr-txt">{{ store.car.descr }}</p>
-            </div>
-          </div>
+          
         </div>
 
       </div>
     </div>
   </section>
 
-  <p class="no-msg" v-else>no information</p>
+  <section class="no-msg__section" v-else>
+    <div class="container">
+      <div class="row">
+        <p class="no-msg">no information About Car</p>
+      </div>
+    </div>
+  </section>
 
   <main class="main">
     <Deals/>
@@ -101,23 +114,53 @@ export default {
     row-gap: 45px;
   }
 
+  .car-links {
+    max-width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    &-item {
+      font-size: 14px;
+      font-weight: 300;
+      text-transform: capitalize;
+      transition: .4s;
+
+      &:hover {
+        color: var(--main-blue);
+      }
+    }
+
+    .link-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--main-black);
+      border-radius: 50%;
+    }
+  }
+
   .car-model {
     font-size: 32px;
     font-weight: 400;
     text-transform: capitalize;
   }
 
-  .car-grid {
+  .car-flex-box {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+
+    .car-flex-column {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+    }
   }
 
   .car-swiper {
     max-width: 780px;
     width: 100%;
-    height: 100%;
 
     &-slide {
       width: 100%;
@@ -138,6 +181,7 @@ export default {
   .car__info {
     max-width: 550px;
     width: 100%;
+    height: max-content;
     display: flex;
     flex-direction: column;
     row-gap: 25px;
@@ -203,6 +247,19 @@ export default {
       font-weight: 300;
       letter-spacing: 1.2px;
       line-height: 150%;
+    }
+  }
+}
+
+.no-msg__section {
+  width: 100%;
+  padding-top: 40px;
+
+  .no-msg {
+    font-size: 18px;
+
+    &::first-letter {
+      text-transform: uppercase;
     }
   }
 }

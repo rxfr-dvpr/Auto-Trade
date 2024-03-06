@@ -37,7 +37,7 @@
                         </span>
                     </div>
 
-                    <button class="car-card-btn" @click="pushToPage(car)">{{ splitPrice(car.price) }} {{ car.currency }}</button>
+                    <button class="car-card-btn all-btn" @click="pushToPage(car)">{{ splitPrice(car.price) }} {{ car.currency }}</button>
                 </div>
             </div>
         </div>
@@ -222,18 +222,6 @@ export default {
                 max-width: 20px;
                 width: max-content;
             }
-        }
-
-        &-btn {
-            width: 100%;
-            background: transparent;
-            border-radius: 8px;
-            border: solid 2px var(--main-black);
-            padding: 14.5px 0;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: .3s;
         }
 
         &:hover, &:active {
