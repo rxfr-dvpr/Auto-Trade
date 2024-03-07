@@ -94,7 +94,7 @@ export default {
         max-width: 360px;
         width: 100%;
         position: absolute;
-        bottom: 0;
+        bottom: -2px;
         left: 50%;
         transform: translateX(-50%);
         background: transparent;
