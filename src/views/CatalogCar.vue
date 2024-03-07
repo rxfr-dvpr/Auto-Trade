@@ -7,6 +7,8 @@
           <router-link to="/home" class="car-links-item">home</router-link>
           <span class="link-dot"></span>
           <router-link to="/catalog" class="car-links-item">catalog</router-link>
+          <span class="link-dot"></span>
+          <router-link :to="`/catalog/${store.car.link}`" class="car-links-item">{{store.car.link}}</router-link>
         </div>
 
         <h3 class="car-model">{{ store.car.model }}</h3>
