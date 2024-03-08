@@ -109,7 +109,7 @@ export default {
 
 .car__section {
   width: 100%;
-  padding: 45px 0 80px;
+  padding: 45px 0 0;
 
   .row {
     flex-direction: column;
@@ -193,6 +193,7 @@ export default {
 
     &-name {
       margin-bottom: 10px;
+      font-weight: 500;
     }
 
     &-drive, &-body, &-gearbox {
@@ -245,7 +246,7 @@ export default {
     }
 
     &-txt {
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 300;
       letter-spacing: 1.2px;
       line-height: 150%;
