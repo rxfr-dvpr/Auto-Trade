@@ -3,7 +3,18 @@
   
   <main class="main">
     <aside class="filter-aside">
-      <p>filter soon</p>
+      <div class="body-filter all-filter">
+        <span class="all-filter-title">body type</span>
+
+        <div class="body-filter-flexbox">
+          <span class="body-filter-btn all-filter-btn" v-for="body in store.filter.bodyTypes" :key="body">
+            <img :src="body.img" alt="" class="body-img">
+            <p class="body-name">{{ body.name }}</p>
+          </span>
+        </div>
+
+      </div>
+
     </aside>
 
     <section class="cars-list__section">
@@ -43,7 +54,7 @@ export default {
   max-width: 1730px;
   width: 100%;
   position: relative;
-  padding: 95px 0;
+  padding: 95px 0 45px;
   display: flex;
   gap: 35px;
   margin: 0 auto;
@@ -52,16 +63,84 @@ export default {
 .filter-aside {
   max-width: 315px;
   width: 100%;
-  height: 100vh;
+  height: 80dvh;
   background: var(--main-white);
   padding: 20px 15px;
+  position: sticky;
+  top: 100px;
+  left: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 20px;
+  flex-direction: column;
+  row-gap: 25px;
+
+  .all-filter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #D9D9D9;
+
+    &-title {
+      font-size: 15px;
+      font-weight: 500;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .body-filter {
+    &-flexbox {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    &-btn {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      border: solid 1px #989898;
+      border-radius: 4px;
+      row-gap: 5px;
+      padding: 5px 0;
+      cursor: pointer;
+      transition: .4s;
+      
+
+      .body-img {
+        width: 100%;
+        filter: grayscale(100%);
+        transition: .4s;
+      }
+
+      .body-name {
+        font-size: 8px;
+        font-weight: 500;
+        color: #4f4f4f;
+        text-transform: uppercase;
+        transition: .4s;
+      }
+
+      &:hover, &:active {
+        border-color: var(--main-blue);
+
+        .body-img {
+          filter: grayscale(0%);
+        }
+
+        .body-name {
+          color: var(--main-blue);
+        }
+      }
+    }
+  }
 }
 
 .cars-list__section {

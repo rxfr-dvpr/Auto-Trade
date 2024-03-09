@@ -899,6 +899,54 @@ export const catalogStore = defineStore('Catalog Store', {
                 seater: 4,
                 descr: 'Alloy wheels, tinting, sunroof, spoiler, railings, xenon, bixenon, crystal optics, lensed optics, daytime running lights, fog lights, headlight washer, headlight corrector, leather, combined, curtains, audio system, built-in phone, bluetooth, CD, CD-changer, MP3, USB, DVD, DVD-changer, subwoofer, GUR, ABS, SRS, winter mode, sport mode, keyless access, full electric package, central locking, air conditioner, climate control, cruise control, trip computer, navigation system, multicooker, seat heating, heated rear seats, seat ventilation, seat memory, steering wheel memory, parktronic, rearview camera, light sensor, rain sensor, tire pressure sensor, air suspension, variable ground clearance, fresh imported, freshly delivered'
             },
-        ]
+        ],
+        filter: {
+            bodyTypes: [
+                {
+                    name: 'coupe',
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fcoupe.png?alt=media&token=dbcebdd9-0000-4c1b-a624-0bb1da896d16'
+                },
+                {
+                    name: 'crossover',
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fcrossover.png?alt=media&token=d2c01b0b-4822-4b17-bf56-5f5d08872c7d'
+                },
+                {
+                    name: 'electric',
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Felectric.png?alt=media&token=d3ed928c-f431-42af-a365-629e000a3345'
+                },
+                {
+                    name: 'hatchback',
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fhatchback.png?alt=media&token=4f60a3d3-a712-4387-a564-d3ff6ab504f3'
+                },
+                {
+                    name: 'micro',
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fmicro.png?alt=media&token=d7ec6968-8d01-4f8b-9800-9ccf7d90681c'
+                },
+                {
+                    name: 'minivan',
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fminivan.png?alt=media&token=3e6f175e-0876-4046-a5d9-4de19a70d82f'
+                },
+                {
+                    name: 'mpv',
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fmvp.png?alt=media&token=f70c1c2d-cfa3-4289-b20e-fd67818e4448'
+                },
+                {
+                    name: 'pickup',
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fpickup.png?alt=media&token=08b39a1b-ab08-46af-ba4d-2cb6cbdc3917'
+                },
+                {
+                    name: 'sedan',
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fsedan.png?alt=media&token=d618772c-cfa9-47f3-b8f3-c5a06597960c'
+                },
+                {
+                    name: 'suv',
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fsuv.png?alt=media&token=4c772a2a-fcfa-4cc3-89fb-1c7d13603965'
+                },
+                {
+                    name: 'ute',
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fute.png?alt=media&token=18b525d0-d8d2-4212-87bf-aa46b682f7b4'
+                }
+            ]
+        }
     })
 })
