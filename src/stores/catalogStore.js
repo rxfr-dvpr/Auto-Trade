@@ -904,47 +904,58 @@ export const catalogStore = defineStore('Catalog Store', {
             bodyTypes: [
                 {
                     name: 'coupe',
-                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fcoupe.png?alt=media&token=dbcebdd9-0000-4c1b-a624-0bb1da896d16'
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fcoupe.png?alt=media&token=dbcebdd9-0000-4c1b-a624-0bb1da896d16',
+                    active: true
                 },
                 {
                     name: 'crossover',
-                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fcrossover.png?alt=media&token=d2c01b0b-4822-4b17-bf56-5f5d08872c7d'
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fcrossover.png?alt=media&token=d2c01b0b-4822-4b17-bf56-5f5d08872c7d',
+                    active: false
                 },
                 {
                     name: 'electric',
-                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Felectric.png?alt=media&token=d3ed928c-f431-42af-a365-629e000a3345'
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Felectric.png?alt=media&token=d3ed928c-f431-42af-a365-629e000a3345',
+                    active: false
                 },
                 {
                     name: 'hatchback',
-                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fhatchback.png?alt=media&token=4f60a3d3-a712-4387-a564-d3ff6ab504f3'
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fhatchback.png?alt=media&token=4f60a3d3-a712-4387-a564-d3ff6ab504f3',
+                    active: false
                 },
                 {
                     name: 'micro',
-                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fmicro.png?alt=media&token=d7ec6968-8d01-4f8b-9800-9ccf7d90681c'
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fmicro.png?alt=media&token=d7ec6968-8d01-4f8b-9800-9ccf7d90681c',
+                    active: false
                 },
                 {
                     name: 'minivan',
-                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fminivan.png?alt=media&token=3e6f175e-0876-4046-a5d9-4de19a70d82f'
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fminivan.png?alt=media&token=3e6f175e-0876-4046-a5d9-4de19a70d82f',
+                    active: false
                 },
                 {
                     name: 'mpv',
-                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fmvp.png?alt=media&token=f70c1c2d-cfa3-4289-b20e-fd67818e4448'
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fmvp.png?alt=media&token=f70c1c2d-cfa3-4289-b20e-fd67818e4448',
+                    active: false
                 },
                 {
                     name: 'pickup',
-                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fpickup.png?alt=media&token=08b39a1b-ab08-46af-ba4d-2cb6cbdc3917'
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fpickup.png?alt=media&token=08b39a1b-ab08-46af-ba4d-2cb6cbdc3917',
+                    active: false
                 },
                 {
                     name: 'sedan',
-                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fsedan.png?alt=media&token=d618772c-cfa9-47f3-b8f3-c5a06597960c'
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fsedan.png?alt=media&token=d618772c-cfa9-47f3-b8f3-c5a06597960c',
+                    active: false
                 },
                 {
                     name: 'suv',
-                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fsuv.png?alt=media&token=4c772a2a-fcfa-4cc3-89fb-1c7d13603965'
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fsuv.png?alt=media&token=4c772a2a-fcfa-4cc3-89fb-1c7d13603965',
+                    active: false
                 },
                 {
                     name: 'ute',
-                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fute.png?alt=media&token=18b525d0-d8d2-4212-87bf-aa46b682f7b4'
+                    img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fute.png?alt=media&token=18b525d0-d8d2-4212-87bf-aa46b682f7b4',
+                    active: false
                 }
             ]
         }

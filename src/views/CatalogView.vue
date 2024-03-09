@@ -3,16 +3,23 @@
   
   <main class="main">
     <aside class="filter-aside">
+
+      <div class="deals-filter all-filter">
+        <span class="all-filter-title">deals</span>
+
+        <label class="deals-filter-btn" for="deals">All deals <input type="checkbox" id="deals"></label>
+      </div>
+
       <div class="body-filter all-filter">
         <span class="all-filter-title">body type</span>
 
         <div class="body-filter-flexbox">
-          <span class="body-filter-btn all-filter-btn" v-for="body in store.filter.bodyTypes" :key="body">
+          <span class="body-filter-btn all-filter-btn" v-for="(body, idx) in store.filter.bodyTypes" 
+          :key="idx" :class="{'active': body.active}" @click="bTypeActive(idx)">
             <img :src="body.img" alt="" class="body-img">
             <p class="body-name">{{ body.name }}</p>
           </span>
         </div>
-
       </div>
 
     </aside>
@@ -43,7 +50,13 @@ export default {
     return {
       store: catalogStore()
     }
-  } 
+  },
+  methods: {
+    bTypeActive(idx) {
+      this.store.filter.bodyTypes.map(body => body.active = false);
+      this.store.filter.bodyTypes[idx].active = true;
+    }
+  }
 }
 
 </script>
@@ -77,7 +90,7 @@ export default {
     width: 100%;
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 15px;
     padding-bottom: 25px;
     border-bottom: 1px solid #D9D9D9;
 
@@ -128,7 +141,7 @@ export default {
         transition: .4s;
       }
 
-      &:hover, &:active {
+      &:hover, &:active, &.active {
         border-color: var(--main-blue);
 
         .body-img {
@@ -138,6 +151,24 @@ export default {
         .body-name {
           color: var(--main-blue);
         }
+      }
+    }
+  }
+
+  .deals-filter {
+    &-btn {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      cursor: pointer;
+      color: var(--main-gray);
+
+      input[type="checkbox"] {
+        width: 17px;
+        height: 17px;
+        cursor: pointer;
       }
     }
   }
