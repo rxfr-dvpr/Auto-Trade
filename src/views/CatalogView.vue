@@ -3,6 +3,14 @@
   
   <main class="main">
     <aside class="filter-aside">
+      <div class="sort-filter all-filter">
+        <span class="all-filter-title">sort by</span>
+
+        <select name="" class="sort-filter-select">
+          <option :value="option.name" v-for="(option, idx) in store.filter.slctOptions" 
+          :key="idx" :selected="option.selected">{{ option.name }}</option>
+        </select>
+      </div>
 
       <div class="deals-filter all-filter">
         <span class="all-filter-title">deals</span>
@@ -101,6 +109,21 @@ export default {
       &::first-letter {
         text-transform: uppercase;
       }
+    }
+  }
+
+  .sort-filter-select {
+    max-width: 135px;
+    width: 100%;
+    text-transform: capitalize;
+    border: solid 1px #D9D9D9;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 6px 8px;
+    font-size: 12px;
+
+    option {
+      padding: 6px 8px;
     }
   }
 

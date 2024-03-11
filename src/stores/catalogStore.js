@@ -957,6 +957,24 @@ export const catalogStore = defineStore('Catalog Store', {
                     img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fute.png?alt=media&token=18b525d0-d8d2-4212-87bf-aa46b682f7b4',
                     active: false
                 }
+            ],
+            slctOptions: [
+                {
+                    name: 'featured',
+                    selected: true
+                },
+                {
+                    name: 'popular',
+                    selected: false
+                },
+                {
+                    name: 'min price',
+                    selected: false
+                },
+                {
+                    name: 'max price',
+                    selected: false
+                }
             ]
         }
     })
