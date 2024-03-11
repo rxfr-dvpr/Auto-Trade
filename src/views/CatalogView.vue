@@ -11,6 +11,15 @@
           :key="idx" :selected="option.selected">{{ option.name }}</option>
         </select>
       </div>
+      
+      <div class="styles-filter all-filter">
+        <span class="all-filter-title">car styles</span>
+
+        <div class="styles-filter-flexbox">
+          <span class="styles-filter-item" v-for="(item, idx) in store.filter.carStyles" 
+          :key="idx">{{ item.name }}</span>
+        </div>
+      </div>
 
       <div class="deals-filter all-filter">
         <span class="all-filter-title">deals</span>
@@ -84,11 +93,11 @@ export default {
 .filter-aside {
   max-width: 315px;
   width: 100%;
-  height: 80dvh;
+  height: 100%;
   background: var(--main-white);
   padding: 20px 15px;
   position: sticky;
-  top: 100px;
+  top: 80px;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -127,6 +136,33 @@ export default {
     }
   }
 
+  .styles-filter {
+    &-flexbox {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 12px;
+      row-gap: 12px;
+    }
+
+    &-item {
+      width: 100%;
+      font-size: 12px;
+      border: solid 1px #D9D9D9;
+      border-radius: 4px;
+      padding: 17px 0;
+      cursor: pointer;
+      transition: .4s;
+      text-align: center;
+      text-transform: capitalize;
+
+      &:hover, &:active, &.active {
+        color: var(--main-blue);
+        border-color: var(--main-blue);
+      }
+    }
+  }
+
   .body-filter {
     &-flexbox {
       width: 100%;
@@ -148,7 +184,6 @@ export default {
       padding: 5px 0;
       cursor: pointer;
       transition: .4s;
-      
 
       .body-img {
         width: 100%;

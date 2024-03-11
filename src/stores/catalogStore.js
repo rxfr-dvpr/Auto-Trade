@@ -905,7 +905,7 @@ export const catalogStore = defineStore('Catalog Store', {
                 {
                     name: 'coupe',
                     img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fcoupe.png?alt=media&token=dbcebdd9-0000-4c1b-a624-0bb1da896d16',
-                    active: true
+                    active: false
                 },
                 {
                     name: 'crossover',
@@ -974,6 +974,40 @@ export const catalogStore = defineStore('Catalog Store', {
                 {
                     name: 'max price',
                     selected: false
+                }
+            ],
+            carStyles: [
+                {
+                    name: 'family car',
+                    type: 'family'
+                },
+                {
+                    name: 'first car',
+                    type: 'first'
+                },
+                {
+                    name: 'electric',
+                    type: 'electric'
+                },
+                {
+                    name: 'hybrid',
+                    type: 'hybrid'
+                },
+                {
+                    name: 'offroad 4x4',
+                    type: 'offroad'
+                },
+                {
+                    name: 'tradie',
+                    type: 'tradie'
+                },
+                {
+                    name: 'performance',
+                    type: 'performance'
+                },
+                {
+                    name: 'prestige',
+                    type: 'prestige'
                 }
             ]
         }
