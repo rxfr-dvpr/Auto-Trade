@@ -11,6 +11,15 @@
           :key="idx" :selected="option.selected">{{ option.name }}</option>
         </select>
       </div>
+
+      <div class="price-filter all-filter">
+        <span class="all-filter-title">price</span>
+
+        <div class="price-filter-inputs">
+          <input type="number" class="min-price-inp all-inp" placeholder="min">
+          <input type="number" class="max-price-inp all-inp" placeholder="max">
+        </div>
+      </div>
       
       <div class="styles-filter all-filter">
         <span class="all-filter-title">car styles</span>
@@ -119,6 +128,19 @@ export default {
         text-transform: uppercase;
       }
     }
+
+    .all-inp {
+      max-width: 130px;
+      width: 100%;
+      border: solid 1px #D9D9D9;
+      padding: 6px 8px;
+      font-size: 12px;
+
+      &::placeholder {
+        text-transform: capitalize;
+        color: #7B7B7B;
+      }
+    }
   }
 
   .sort-filter-select {
@@ -133,6 +155,17 @@ export default {
 
     option {
       padding: 6px 8px;
+    }
+  }
+
+  .price-filter {
+    &-inputs {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      column-gap: 10px;
+      row-gap: 12px;
     }
   }
 
