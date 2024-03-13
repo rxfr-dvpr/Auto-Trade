@@ -74,7 +74,7 @@ export default {
         }
 
         .item-name {
-            font-size: 24px;
+            font-size: calc(20px + 4 * (100vw / 1920));
             color: var(--main-white);
             text-transform: uppercase;
             font-weight: 500;
@@ -85,7 +85,7 @@ export default {
             margin-left: auto;
             padding: 20px 35px;
             backdrop-filter: blur(10px);
-            font-size: 14px;
+            font-size: calc(10px + 4 * (100vw / 1920));
             text-transform: uppercase;
             font-weight: 500;
             color: var(--main-white);
@@ -115,6 +115,39 @@ export default {
             &.item-2 { grid-area: unset; }
             &.item-3 { grid-area: unset; }
         }
+    }
+}
+
+@media (min-width: 1920px) {
+    .item-name {
+        font-size: 24px !important;
+    }
+
+    .item-link {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 1290px) {
+    .row {
+        grid-column-gap: 10px !important;
+        grid-row-gap: 10px !important;
+    }
+
+    .item-link {
+        padding: 15px 25px !important;
+    }
+}
+
+@media (max-width: 786px) {
+    .row {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .categories-item {
+        max-width: 450px;
     }
 }
 
