@@ -26,7 +26,7 @@
 
         <div class="styles-filter-flexbox">
           <span class="styles-filter-item" v-for="(item, idx) in store.filter.carStyles" 
-          :key="idx">{{ item.name }}</span>
+          :key="idx" :class="{'active': item.active}" @click="carStyleActive(idx)">{{ item.name }}</span>
         </div>
       </div>
 
@@ -81,6 +81,10 @@ export default {
     bTypeActive(idx) {
       this.store.filter.bodyTypes.map(body => body.active = false);
       this.store.filter.bodyTypes[idx].active = true;
+    },
+    carStyleActive(idx) {
+      this.store.filter.carStyles.map(body => body.active = false);
+      this.store.filter.carStyles[idx].active = true;
     }
   }
 }

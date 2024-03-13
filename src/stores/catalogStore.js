@@ -979,35 +979,43 @@ export const catalogStore = defineStore('Catalog Store', {
             carStyles: [
                 {
                     name: 'family car',
-                    type: 'family'
+                    type: 'family',
+                    active: false
                 },
                 {
                     name: 'first car',
-                    type: 'first'
+                    type: 'first',
+                    active: false
                 },
                 {
                     name: 'electric',
-                    type: 'electric'
+                    type: 'electric',
+                    active: false
                 },
                 {
                     name: 'hybrid',
-                    type: 'hybrid'
+                    type: 'hybrid',
+                    active: false
                 },
                 {
                     name: 'offroad 4x4',
-                    type: 'offroad'
+                    type: 'offroad',
+                    active: false
                 },
                 {
                     name: 'tradie',
-                    type: 'tradie'
+                    type: 'tradie',
+                    active: false
                 },
                 {
                     name: 'performance',
-                    type: 'performance'
+                    type: 'performance',
+                    active: false
                 },
                 {
                     name: 'prestige',
-                    type: 'prestige'
+                    type: 'prestige',
+                    active: false
                 }
             ]
         }
