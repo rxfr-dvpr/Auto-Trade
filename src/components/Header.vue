@@ -87,7 +87,7 @@ export default {
     }
 
     &-subtitle {
-        font-size: calc(25px + 10 * (100vw / 1920));
+        font-size: calc(15px + 20 * (100vw / 1920));
     }
 
     .header-btn {
@@ -100,7 +100,7 @@ export default {
         background: transparent;
         border: 0;
         padding: 15px 0 5px;
-        font-size: 18px;
+        font-size: calc(12px + 6 * (100vw / 1920));
         text-transform: uppercase;
         font-weight: 800;
 
@@ -132,6 +132,16 @@ export default {
         &-subtitle {
             font-size: 35px !important;
         }
+
+        &-btn {
+            font-size: 18px !important;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 230px 0 280px;
     }
 }
 
