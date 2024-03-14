@@ -74,7 +74,7 @@ export default {
         justify-content: center;
         align-items: center;
         text-transform: uppercase;
-        font-size: 16px;
+        font-size: calc(12px + 4 * (100vw / 1920));
         transition: .3s;
         cursor: pointer;
 
@@ -104,7 +104,7 @@ export default {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      gap: 20px;
+      gap: 25px;
 
       &-item {
         max-width: max-content;
@@ -160,6 +160,19 @@ export default {
         border-color: var(--main-black);
       }
     }
+  }
+}
+
+@media (max-width: 1170px) {
+  .board__items {
+    justify-content: center !important;
+    column-gap: 35px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .board__types-btn {
+    padding: 15px 0 !important;
   }
 }
 
