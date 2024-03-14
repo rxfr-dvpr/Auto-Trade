@@ -73,7 +73,7 @@ export default {
             }
 
             .step-name {
-                font-size: 24px;
+                font-size: calc(18px + 6 * (100vw / 1920));
                 text-transform: uppercase;
                 font-weight: 700;
             }
@@ -81,7 +81,7 @@ export default {
             .step-txt {
                 max-width: 400px;
                 width: 100%;
-                font-size: 17px;
+                font-size: calc(12px + 5 * (100vw / 1920));
 
                 &::first-letter {
                     text-transform: uppercase;
@@ -93,6 +93,32 @@ export default {
             &.step-3 { grid-area: 1 / 7 / 3 / 9; }
             &.step-4 { grid-area: 3 / 1 / 5 / 4; }
             &.step-5 { grid-area: 3 / 4 / 5 / 9; }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .buy__steps {
+        grid-template-columns: repeat(4, 1fr) !important;
+        grid-template-rows: repeat(6, 1fr) !important;
+
+        &-item {
+            &.step-1 { grid-area: 1 / 1 / 3 / 3 !important; }
+            &.step-2 { grid-area: 1 / 3 / 3 / 5 !important; }
+            &.step-3 { grid-area: 3 / 1 / 5 / 3 !important; }
+            &.step-4 { grid-area: 3 / 3 / 5 / 5 !important; }
+            &.step-5 { grid-area: 5 / 1 / 7 / 5 !important; }
+        }
+    }
+}
+
+@media (max-width: 556px) {
+    .buy__steps {
+        display: flex !important;
+        flex-direction: column;
+
+        &-item {
+            padding: 15px !important;
         }
     }
 }
