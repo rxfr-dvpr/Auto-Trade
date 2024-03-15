@@ -61,7 +61,7 @@ export default {
             text-align: center;
 
             .card-name {
-                font-size: 20px;
+                font-size: calc(16px + 4 * (100vw / 1920));
                 color: var(--main-white);
                 text-transform: uppercase;
                 font-weight: 500;
@@ -69,7 +69,7 @@ export default {
             }
 
             .card-descr {
-                font-size: 14px;
+                font-size: calc(12px + 2 * (100vw / 1920));
                 color: var(--main-white);
                 margin-top: auto;
 
@@ -89,6 +89,34 @@ export default {
         object-fit: cover;
         z-index: -1;
         border-radius: 30px;
+    }
+}
+
+@media (max-width: 1170px) {
+    .about__cards {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &-item {
+            max-width: 315px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .about__section {
+        .row {
+            padding-top: 250px;
+        }
+    }
+
+    .about__cards {
+        padding: 0 20px 20px !important;
+        
+        &-item {
+            max-width: 405px;
+        }
     }
 }
 
