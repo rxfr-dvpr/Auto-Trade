@@ -107,6 +107,7 @@ export default {
         align-items: flex-end;
         text-align: end;
         justify-content: space-between;
+        row-gap: 25px;
 
         .contact-link {
             max-width: 500px;
@@ -119,7 +120,7 @@ export default {
             transition: .3s;
 
             span {
-                font-size: 18px;
+                font-size: calc(15px + 3 * (100vw / 1920));
                 transition: .3s;
             }
 
@@ -131,6 +132,32 @@ export default {
                 }
             }
         }
+    }
+}
+
+@media (min-width: 1920px) {
+    .contact-link {
+        span {
+            font-size: 18px !important;
+        }
+    }
+}
+
+@media (max-width: 668px) {
+    .row {
+        flex-direction: column;
+        justify-content: flex-start !important;
+        align-items: center;
+    }
+
+    .footer-brand {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-contact {
+        align-items: center !important;
+        text-align: center !important;
     }
 }
 

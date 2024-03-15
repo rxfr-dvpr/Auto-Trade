@@ -92,6 +92,16 @@ export default {
     }
 }
 
+@media (min-width: 1920px) {
+    .card-name {
+        font-size: 20px !important;
+    }
+
+    .card-descr {
+        font-size: 14px !important;
+    }
+}
+
 @media (max-width: 1170px) {
     .about__cards {
         display: flex !important;

@@ -97,6 +97,16 @@ export default {
     }
 }
 
+@media (min-width: 1920px) {
+    .step-name {
+        font-size: 24px !important;
+    }
+
+    .step-txt {
+        font-size: 17px !important;
+    }
+}
+
 @media (max-width: 992px) {
     .buy__steps {
         grid-template-columns: repeat(4, 1fr) !important;

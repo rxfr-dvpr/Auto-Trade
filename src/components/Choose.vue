@@ -163,6 +163,12 @@ export default {
   }
 }
 
+@media (min-width: 1920px) {
+  .board__types-btn {
+    font-size: 16px !important;
+  }
+}
+
 @media (max-width: 1170px) {
   .board__items {
     justify-content: center !important;
