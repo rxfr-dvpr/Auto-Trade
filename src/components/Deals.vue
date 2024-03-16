@@ -44,8 +44,9 @@ export default {
 
     .car__cards {
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         column-gap: 12px;
         row-gap: 35px;
     }

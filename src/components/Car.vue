@@ -82,6 +82,7 @@ export default {
 <style lang="scss" scoped>
 
 .car-card {
+  max-width: 325px;
   width: 100%;
   border: solid 1px #d9d9d9;
   border-radius: 10px;

@@ -57,7 +57,6 @@
         </div>
       </div>
     </section>
-
   </main>
 </template>
 
@@ -96,25 +95,27 @@ export default {
 .main {
   max-width: 1730px;
   width: 100%;
-  position: relative;
   padding: 95px 0 45px;
   display: flex;
-  gap: 35px;
+  gap: 20px;
   margin: 0 auto;
+  justify-content: center;
+  position: relative;
 }
 
 .filter-aside {
   max-width: 315px;
   width: 100%;
-  height: 100%;
+  height: max-content;
   background: var(--main-white);
   padding: 20px 15px;
   position: sticky;
   top: 80px;
-  left: 0;
+  left: 15px;
   display: flex;
   flex-direction: column;
   row-gap: 25px;
+  z-index: 500;
 
   .all-filter {
     width: 100%;
@@ -269,15 +270,25 @@ export default {
   }
 }
 
+
 .cars-list__section {
+  max-width: 1400px;
   width: 100%;
   height: max-content;
 
   .row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     column-gap: 12px;
     row-gap: 35px;
+  }
+}
+
+@media (max-width: 992px) {
+  .filter-aside {
+    position: absolute;
+    left: -100%;
   }
 }
 
