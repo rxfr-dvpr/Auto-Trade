@@ -22,11 +22,9 @@
             </swiper>
 
             <div class="car__descr">
-              <div class="car__descr-info">
                 <h3 class="car__descr-title">description</h3>
 
                 <p class="car__descr-txt">{{ store.car.descr }}</p>
-              </div>
             </div>
           </div>
 
@@ -55,8 +53,6 @@
 
             <button class="order-btn all-btn">order</button>
           </div>
-
-          
         </div>
 
       </div>
@@ -123,7 +119,7 @@ export default {
     gap: 10px;
     
     &-item {
-      font-size: 14px;
+      font-size: calc(12px + 2 * (100vw / 1920));
       font-weight: 300;
       text-transform: capitalize;
       transition: .4s;
@@ -142,7 +138,7 @@ export default {
   }
 
   .car-model {
-    font-size: 32px;
+    font-size: calc(20px + 12 * (100vw / 1920));
     font-weight: 400;
     text-transform: capitalize;
   }
@@ -150,19 +146,22 @@ export default {
   .car-flex-box {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    column-gap: 10px;
+    row-gap: 10px;
 
     .car-flex-column {
+      max-width: max-content;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      row-gap: 10px;
+      gap: 10px;
     }
   }
 
   .car-swiper {
     max-width: 780px;
     width: 100%;
+    height: 500px;
 
     &-slide {
       width: 100%;
@@ -173,8 +172,6 @@ export default {
 
     &-img {
       width: 100%;
-      max-height: 500px;
-      min-height: 500px;
       height: 100%;
       object-fit: cover;
     }
@@ -192,6 +189,7 @@ export default {
     border-radius: 30px;
 
     &-name {
+      font-size: calc(16px + 6 * (100vw / 1920));
       margin-bottom: 10px;
       font-weight: 500;
     }
@@ -212,7 +210,7 @@ export default {
       width: 100%;
       display: flex;
       justify-content: space-between;
-      font-size: 14px;
+      font-size: calc(12px + 2 * (100vw / 1920));
       font-weight: 300;
 
       span {
@@ -227,26 +225,19 @@ export default {
     width: 100%;
     display: flex;
     flex-direction: column;
-    row-gap: 25px;
+    row-gap: 15px;
     background: var(--main-white);
     border-radius: 30px;
-
-    &-info {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      padding: 30px;
-      row-gap: 15px;
-    }
+    padding: 30px;
 
     &-title {
-      font-size: 24px;
+      font-size: calc(20px + 4 * (100vw / 1920));
       font-weight: 500;
       text-transform: capitalize;
     }
 
     &-txt {
-      font-size: 13px;
+      font-size: calc(11px + 2 * (100vw / 1920));
       font-weight: 300;
       letter-spacing: 1.2px;
       line-height: 150%;
@@ -273,6 +264,106 @@ export default {
   flex-direction: column;
   padding: 90px 0;
   row-gap: 120px;
+}
+
+@media (min-width: 1920px) {
+  .car-model {
+    font-size: 32px !important;
+  }
+
+  .car-links-item, .all-info {
+    font-size: 14px !important;
+  }
+
+  .car__info-name {
+    font-size: 22px !important;
+  }
+
+  .car__descr {
+    &-title {
+      font-size: 24px !important;
+    }
+
+    &-txt {
+      font-size: 13px !important;
+    }
+  }
+}
+
+@media (max-width: 1190px) {
+  .car-flex-box {
+    flex-direction: column;
+
+    .car-flex-column {
+      flex-direction: row !important;
+
+      .car__descr {
+        max-width: 400px;
+        padding: 25px !important;
+      }
+    }
+
+    .car__info {
+      padding: 30px !important;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .car-flex-box {
+    align-items: center;
+
+    .car-flex-column {
+      flex-direction: column !important;
+      align-items: center;
+
+      .car__descr {
+        max-width: 780px;
+        padding: 20px !important;
+        background: transparent;
+
+        &-txt {
+          display: -webkit-box;
+          -webkit-line-clamp: 6;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      }
+    }
+
+    .car__info {
+      max-width: 780px;
+      padding: 20px !important;
+    }
+  }
+
+  .car-swiper {
+    height: 450px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .car-swiper {
+    height: 350px !important;
+  }
+
+  .car-flex-box {
+    .car-flex-column {
+      .car__descr {
+        padding: 10px !important;
+      }
+    }
+
+    .car__info {
+      padding: 20px 15px !important;
+    }
+  }
+}
+
+@media (max-width: 486px) {
+  .car-swiper {
+    height: 250px !important;
+  }
 }
 
 </style>
