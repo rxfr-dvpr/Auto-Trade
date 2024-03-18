@@ -33,7 +33,7 @@
       <div class="deals-filter all-filter">
         <span class="all-filter-title">deals</span>
 
-        <label class="deals-filter-btn" for="deals">All deals <input type="checkbox" id="deals"></label>
+        <label class="deals-filter-btn" for="deals" @click="allDealsFunc">All deals <input type="checkbox" id="deals"></label>
       </div>
 
       <div class="body-filter all-filter">
@@ -85,6 +85,8 @@ export default {
   },
   methods: {
     bTypeActive(idx) {
+      document.querySelector('#deals').checked = false
+
       this.store.filter.bodyTypes.map(body => body.active = false);
       this.store.filter.bodyTypes[idx].active = true;
 
@@ -98,6 +100,8 @@ export default {
       this.filteredStore = data.filter(car => this.store.filter.bodyTypes[idx].name.toLowerCase() == car.body.toLowerCase())
     },
     carStyleActive(idx) {
+      document.querySelector('#deals').checked = false
+
       this.store.filter.carStyles.map(body => body.active = false);
       this.store.filter.carStyles[idx].active = true;
 
@@ -106,6 +110,18 @@ export default {
       }, 200);
 
       window.scrollTo({ top: 500, behavior: 'smooth' })
+    },
+    allDealsFunc() {
+      const status = document.querySelector('#deals').checked
+
+      if (status) {
+        this.store.filter.bodyTypes.map(body => body.active = false);
+        this.store.filter.carStyles.map(body => body.active = false);
+
+        this.filteredStore = catalogStore().cars
+
+        window.scrollTo({ top: 500, behavior: 'smooth' })
+      }
     }
   },
   mounted() {
