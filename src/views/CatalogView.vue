@@ -86,10 +86,22 @@ export default {
     bTypeActive(idx) {
       this.store.filter.bodyTypes.map(body => body.active = false);
       this.store.filter.bodyTypes[idx].active = true;
+
+      setTimeout(() => {
+        this.filterOpened = false        
+      }, 200);
+
+      window.scrollTo({ top: 500, behavior: 'smooth' })
     },
     carStyleActive(idx) {
       this.store.filter.carStyles.map(body => body.active = false);
       this.store.filter.carStyles[idx].active = true;
+
+      setTimeout(() => {
+        this.filterOpened = false        
+      }, 200);
+
+      window.scrollTo({ top: 500, behavior: 'smooth' })
     }
   },
   mounted() {
@@ -211,6 +223,7 @@ export default {
   }
 
   .body-filter {
+    border-bottom: unset;
     &-flexbox {
       width: 100%;
       display: grid;
