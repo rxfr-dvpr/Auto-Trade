@@ -480,7 +480,7 @@ export const catalogStore = defineStore('Catalog Store', {
                     active: false
                 },
                 {
-                    name: 'minivan',
+                    name: 'mini van',
                     img: 'https://firebasestorage.googleapis.com/v0/b/union-auto-trade.appspot.com/o/Catalog%2FbodyTypes%2Fminivan.png?alt=media&token=3e6f175e-0876-4046-a5d9-4de19a70d82f',
                     active: false
                 },

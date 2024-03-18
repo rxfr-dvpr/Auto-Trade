@@ -57,7 +57,7 @@
     <section class="cars-list__section">
       <div class="container">
         <div class="row">
-          <Car v-for="(car, idx) in store.cars" :car="car" :key="idx"/>
+          <Car v-for="(car, idx) in filteredStore" :car="car" :key="idx"/>
         </div>
       </div>
     </section>
@@ -79,7 +79,8 @@ export default {
     return {
       store: catalogStore(),
       filterOpened: false,
-      wSize: window.innerWidth
+      wSize: window.innerWidth,
+      filteredStore: catalogStore().cars
     }
   },
   methods: {
@@ -92,6 +93,9 @@ export default {
       }, 200);
 
       window.scrollTo({ top: 500, behavior: 'smooth' })
+
+      const data = [...this.store.cars]
+      this.filteredStore = data.filter(car => this.store.filter.bodyTypes[idx].name.toLowerCase() == car.body.toLowerCase())
     },
     carStyleActive(idx) {
       this.store.filter.carStyles.map(body => body.active = false);
