@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-top" :class="{'second-mode': this.$route.name !== 'home'}">
+  <div class="nav-top" :class="{'second-mode': this.$route.name !== 'home'}" v-if="wSize > 786">
     <div class="container">
         <div class="row">
             <div class="nav-top-left">
@@ -47,8 +47,14 @@ export default {
     name: 'Nav Top',
     data() {
         return {
-            store: navTopStore()
+            store: navTopStore(),
+            wSize: window.innerWidth
         }
+    },
+    mounted() {
+        window.addEventListener('resize', () => {
+            this.wSize = window.innerWidth
+        })
     }
 }
 

@@ -78,6 +78,7 @@ export default {
   .row {
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
   }
 
   &-logo {
@@ -102,7 +103,7 @@ export default {
     gap: 25px;
 
     &-link {
-      font-size: 14px;
+      font-size: calc(10px + 4 * (100vw / 1920));
       color: var(--main-white);
       text-transform: uppercase;
       font-weight: 500;
@@ -114,5 +115,42 @@ export default {
     }
   }
 }
+
+@media (min-width: 1920px) {
+  .nav__list-link {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 1300px) {
+  .nav__list {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 786px) {
+  .nav {
+    top: 0;
+    border-top-color: transparent !important;
+    
+    &-logo {
+      max-width: 150px;
+    }
+
+    &__list {
+      max-width: 320px;
+      min-width: max-content;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .nav {
+    &-logo {
+      max-width: 100px;
+    }
+  }
+}
+
 
 </style>
