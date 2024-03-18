@@ -2,7 +2,7 @@
   <Header/>
   
   <main class="main">
-    <aside class="filter-aside">
+    <aside class="filter-aside" :class="{'opened': filterOpened}">
       <div class="sort-filter all-filter">
         <span class="all-filter-title">sort by</span>
 
@@ -48,6 +48,10 @@
         </div>
       </div>
 
+      <button class="mb-btn" @click="filterOpened = !filterOpened" v-if="wSize < 992">
+        <i class="fas fa-chevron-right" v-if="!filterOpened"></i>
+        <i class="fas fa-chevron-left" v-else></i>
+      </button>
     </aside>
 
     <section class="cars-list__section">
@@ -73,7 +77,9 @@ export default {
   },
   data() {
     return {
-      store: catalogStore()
+      store: catalogStore(),
+      filterOpened: false,
+      wSize: window.innerWidth
     }
   },
   methods: {
@@ -85,6 +91,9 @@ export default {
       this.store.filter.carStyles.map(body => body.active = false);
       this.store.filter.carStyles[idx].active = true;
     }
+  },
+  mounted() {
+    window.addEventListener('resize', () => { this.wSize = window.innerWidth })
   }
 }
 
@@ -268,6 +277,23 @@ export default {
       }
     }
   }
+
+  .mb-btn {
+    width: 30px;
+    height: 35px;
+    position: absolute;
+    top: 5%;
+    right: -30px;
+    background: var(--main-white);
+    border: 0;
+    border-top: solid 1px #D9D9D9;
+    border-right: solid 1px #D9D9D9;
+    border-bottom: solid 1px #D9D9D9;
+    padding: 6px 8px;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+  }
 }
 
 
@@ -286,9 +312,19 @@ export default {
 }
 
 @media (max-width: 992px) {
+  .main {
+    padding: 80px 0 45px !important;
+  }
+
   .filter-aside {
     position: absolute;
-    left: -100%;
+    left: -315px;
+    transition: .4s;
+
+    &.opened {
+      left: 0;
+      box-shadow: 10px 2px 10px rgba($color: #000000, $alpha: .2);
+    }
   }
 }
 
