@@ -6,7 +6,7 @@
       <div class="sort-filter all-filter">
         <span class="all-filter-title">sort by</span>
 
-        <select name="" class="sort-filter-select">
+        <select name="" class="sort-filter-select" @change="sortFilter($event)">
           <option :value="option.name" v-for="(option, idx) in store.filter.slctOptions" 
           :key="idx" :selected="option.selected">{{ option.name }}</option>
         </select>
@@ -121,6 +121,18 @@ export default {
         this.filteredStore = catalogStore().cars
 
         window.scrollTo({ top: 500, behavior: 'smooth' })
+      }
+    },
+    sortFilter(event) {
+      const data = [...this.store.cars]
+      const option = event.target.value
+
+      if (option == 'max price') {
+        this.filteredStore = data.sort((a, b) => b.price - a.price)
+      } else if (option == 'min price') {
+        this.filteredStore = data.sort((a, b) => a.price - b.price);
+      } else {
+        this.filteredStore = this.store.cars
       }
     }
   },
