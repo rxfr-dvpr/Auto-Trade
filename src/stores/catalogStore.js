@@ -516,7 +516,7 @@ export const catalogStore = defineStore('Catalog Store', {
                     selected: true
                 },
                 {
-                    name: 'popular',
+                    name: 'newest',
                     selected: false
                 },
                 {

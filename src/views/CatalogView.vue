@@ -80,7 +80,7 @@ export default {
       store: catalogStore(),
       filterOpened: false,
       wSize: window.innerWidth,
-      filteredStore: catalogStore().cars,
+      filteredStore: '',
       minPriceVal: '',
       maxPriceVal: ''
     }
@@ -127,17 +127,22 @@ export default {
     },
     sortFilter(event) {
       if (this.filteredStore.length) {
-        const option = event.target.value
-  
-        if (option == 'max price') {
-          this.filteredStore = this.filteredStore.sort((a, b) => b.price - a.price)
-        } else if (option == 'min price') {
+        const option = event.target.value;
+
+        if (option === 'max price') {
+          this.filteredStore = this.filteredStore.sort((a, b) => b.price - a.price);
+        } else if (option === 'min price') {
           this.filteredStore = this.filteredStore.sort((a, b) => a.price - b.price);
+        } else if (option === 'newest') {
+          this.filteredStore = this.filteredStore.sort((a, b) => +b.year - +a.year);
         } else {
-          this.filteredStore = this.filteredStore
+          this.filteredStore = [...this.store.cars];
         }
       }
     }
+  },
+  beforeMount() {
+    this.filteredStore = [...this.store.cars]
   },
   mounted() {
     window.addEventListener('resize', () => { this.wSize = window.innerWidth })
