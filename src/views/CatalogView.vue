@@ -16,8 +16,8 @@
         <span class="all-filter-title">price</span>
 
         <div class="price-filter-inputs">
-          <input type="number" class="min-price-inp all-inp" placeholder="min">
-          <input type="number" class="max-price-inp all-inp" placeholder="max">
+          <input type="number" class="min-price-inp all-inp" placeholder="min" v-model="minPriceVal">
+          <input type="number" class="max-price-inp all-inp" placeholder="max" v-model="maxPriceVal">
         </div>
       </div>
       
@@ -80,7 +80,9 @@ export default {
       store: catalogStore(),
       filterOpened: false,
       wSize: window.innerWidth,
-      filteredStore: catalogStore().cars
+      filteredStore: catalogStore().cars,
+      minPriceVal: '',
+      maxPriceVal: ''
     }
   },
   methods: {
@@ -124,20 +126,55 @@ export default {
       }
     },
     sortFilter(event) {
-      const data = [...this.store.cars]
-      const option = event.target.value
-
-      if (option == 'max price') {
-        this.filteredStore = data.sort((a, b) => b.price - a.price)
-      } else if (option == 'min price') {
-        this.filteredStore = data.sort((a, b) => a.price - b.price);
-      } else {
-        this.filteredStore = this.store.cars
+      if (this.filteredStore.length) {
+        const option = event.target.value
+  
+        if (option == 'max price') {
+          this.filteredStore = this.filteredStore.sort((a, b) => b.price - a.price)
+        } else if (option == 'min price') {
+          this.filteredStore = this.filteredStore.sort((a, b) => a.price - b.price);
+        } else {
+          this.filteredStore = this.filteredStore
+        }
       }
     }
   },
   mounted() {
     window.addEventListener('resize', () => { this.wSize = window.innerWidth })
+  },
+  watch: {
+    minPriceVal(newVal, oldVal) {
+      const data = [...this.store.cars];
+      if (newVal < oldVal) {
+        this.filteredStore = this.store.cars.filter(car => car.price >= newVal);
+      } else {
+        if (newVal !== null && newVal !== '') {
+          if (this.maxPriceVal != '') {
+            this.filteredStore = this.filteredStore.filter(car => car.price >= newVal);
+          } else {
+            this.filteredStore = data.filter(car => car.price >= newVal);
+          }
+        } else {
+          this.filteredStore = this.filteredStore.filter(car => car.price >= newVal);
+        }
+      }
+    },
+    maxPriceVal(newVal, oldVal) {
+      const data = [...this.store.cars];
+      if (newVal < oldVal) { 
+        this.filteredStore = this.filteredStore.filter(car => car.price <= newVal);
+      } else {
+        if (newVal !== null && newVal !== '') {
+          if (this.minPriceVal != '') {
+            this.filteredStore = this.filteredStore.filter(car => car.price <= newVal);
+          } else {
+            this.filteredStore = data.filter(car => car.price <= newVal);
+          }
+        } else {
+          this.filteredStore = this.filteredStore.filter(car => car.price <= newVal);
+        }
+      }
+    }
   }
 }
 
