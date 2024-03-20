@@ -54,13 +54,15 @@
       </button>
     </aside>
 
-    <section class="cars-list__section">
+    <section class="cars-list__section" v-if="filteredStore.length">
       <div class="container">
         <div class="row">
           <Car v-for="(car, idx) in filteredStore" :car="car" :key="idx"/>
         </div>
       </div>
     </section>
+
+    <p class="v-else-msg" v-else>no cars by this filter...</p>
   </main>
 </template>
 
@@ -80,7 +82,7 @@ export default {
       store: catalogStore(),
       filterOpened: false,
       wSize: window.innerWidth,
-      filteredStore: '',
+      filteredStore: [],
       minPriceVal: '',
       maxPriceVal: ''
     }
@@ -112,6 +114,9 @@ export default {
       }, 200);
 
       window.scrollTo({ top: 500, behavior: 'smooth' })
+
+      const data = [...this.store.cars]
+      this.filteredStore = data.filter(car => this.store.filter.carStyles[idx].type.toLowerCase() == car.style.toLowerCase())
     },
     allDealsFunc() {
       const status = document.querySelector('#deals').checked
@@ -395,6 +400,23 @@ export default {
     justify-content: center;
     column-gap: 12px;
     row-gap: 35px;
+  }
+}
+
+.v-else-msg {
+  max-width: 1400px;
+  width: 100%;
+  padding-left: 50px;
+  font-size: calc(15px + 6 * (100vw / 1920));
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: 1920px) {
+  .v-else-msg {
+    font-size: 21px !important;
   }
 }
 
