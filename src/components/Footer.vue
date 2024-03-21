@@ -153,6 +153,10 @@ export default {
     .footer-brand {
         align-items: center;
         text-align: center;
+
+        .footer-logo {
+            max-width: 100px !important;
+        }
     }
 
     .footer-contact {
